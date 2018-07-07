@@ -1,0 +1,92 @@
+apply plugin: 'com.android.library'
+apply plugin: "com.mob.sdk"
+
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    MobSDK {
+        appKey "26af6051ed500"
+        appSecret "59ae149be9292f255c01879917088554"
+
+        ShareSDK {
+            devInfo {
+                SinaWeibo {
+                    appKey "568898243"
+                    appSecret "38a4f8204cc784f81f9f0daaf31e02e3"
+                    callbackUri "http://www.sharesdk.cn"
+                    shareByAppClient false
+                }
+                Wechat {
+                    appId "wx4868b35061f87885"
+                    appSecret "64020361b8ec4c99936c0e3999a9f249"
+                    withShareTicket true
+                    miniprogramType 2
+                    bypassApproval true
+                }
+
+                WechatMoments {
+                    appId "wx4868b35061f87885"
+                    appSecret "64020361b8ec4c99936c0e3999a9f249"
+                    withShareTicket true
+                    miniprogramType 2
+                    bypassApproval true
+                }
+
+
+                QQ {
+                    appId "1106613900"
+                    appKey "rYgXiPenEOuJs0fM"
+                    shareByAppClient true
+                }
+            }
+        }
+    }
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    compile "com.alibaba:fastjson:${rootProject.ext.fastjsonLibVersion}"
+    compile 'com.android.support:appcompat-v7:25.1.1'
+    compile 'com.taobao.android:weex_sdk:0.16.0'
+    provided 'com.taobao.android:weexplugin-processor:1.3'
+    provided 'com.taobao.android:weexplugin-annotation:1.3'
+    compile 'com.taobao.android:weexplugin-loader:1.3'
+
+
+    debugCompile 'com.taobao.android:weex_analyzer:0.1.0.5'
+    compile 'com.taobao.android.weex_inspection:urlconnection_interceptor:1.0.0@aar'
+    compile 'com.taobao.android:weex_inspector:0.12.1@aar'
+
+    compile "com.taobao.android:weex_sdk:${rootProject.ext.weex_sdk}"
+
+    // PLUGIN GRADLE EXTENSIONS START
+    compile 'com.taobao.android:weexplugin-loader:1.3'
+    compile 'com.taobao.android:weexplugin-processor:1.3'
+    compile 'com.taobao.android:weexplugin-annotation:1.3'
+
+
+    testCompile 'junit:junit:4.12'
+}
