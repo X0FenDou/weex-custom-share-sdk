@@ -1,6 +1,6 @@
 {
   "name": "weex-custom-share-sdk",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "weex plugin of shareSDK",
   "author": "wqc-1984@163.com",
   "WeexSDKVersoin": "0.16.0",
@@ -16,17 +16,17 @@
   },
   "web": {
     "name": "weex-custom-share-sdk",
-    "version": "1.0.4"
+    "version": "1.0.5"
   },
   "android": {
     "groupId": "org.weex.plugin",
     "name": "weex-custom-share-sdk",
-    "dependency": "org.asialee.weex:weexplugin:1.0.4"
+    "dependency": "org.asialee.weex:weexplugin:1.0.5"
   },
   "ios": {
     "type": "pod",
     "name": "weex-custom-share-sdk",
-    "version": "1.0.4"
+    "version": "1.0.5"
   },
   "keywords": [
     "weex",
