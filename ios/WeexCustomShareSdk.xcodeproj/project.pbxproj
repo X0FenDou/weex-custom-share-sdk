@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7FCFDCC9B8CCBF7E1E7B5226 /* libPods-WeexCustomShareSdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F63372413913F9321986758 /* libPods-WeexCustomShareSdk.a */; };
 		C45843F01E84EF7B00D88C0B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C45843EF1E84EF7B00D88C0B /* Info.plist */; };
-		C45843FC1E84F39100D88C0B /* WeexCustomShareSdkModule.h in Headers */ = {isa = PBXBuildFile; fileRef = C45843F61E84F39100D88C0B /* Module.h */; };
+		C45843FC1E84F39100D88C0B /* WeexCustomShareSdkModule.h in Headers */ = {isa = PBXBuildFile; fileRef = C45843F61E84F39100D88C0B /* WeexCustomShareSdkModule.h */; };
 		C45843FD1E84F39100D88C0B /* WeexCustomShareSdkModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C45843F71E84F39100D88C0B /* WeexCustomShareSdkModule.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0F1C92092FF9562A4B475501 /* Pods-WeexCustomShareSdk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeexCustomShareSdk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeexCustomShareSdk/Pods-WeexCustomShareSdk.debug.xcconfig"; sourceTree = "<group>"; };
+		1F63372413913F9321986758 /* libPods-WeexCustomShareSdk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeexCustomShareSdk.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		87F9AEB97654FF7EEA032F16 /* Pods-WeexCustomShareSdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeexCustomShareSdk.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeexCustomShareSdk/Pods-WeexCustomShareSdk.release.xcconfig"; sourceTree = "<group>"; };
 		C45843E41E84EF5B00D88C0B /* WeexCustomShareSdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WeexCustomShareSdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C45843EF1E84EF7B00D88C0B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -26,6 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FCFDCC9B8CCBF7E1E7B5226 /* libPods-WeexCustomShareSdk.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -35,6 +38,7 @@
 		248CB2E7B700A3049EE0727E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1F63372413913F9321986758 /* libPods-WeexCustomShareSdk.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -99,6 +103,7 @@
 				C45843E01E84EF5B00D88C0B /* Frameworks */,
 				C45843E11E84EF5B00D88C0B /* Headers */,
 				C45843E21E84EF5B00D88C0B /* Resources */,
+				9ED536532A30E4D40B39C7B4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -159,13 +164,36 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WeexCustomShareSdk-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9ED536532A30E4D40B39C7B4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WeexCustomShareSdk/Pods-WeexCustomShareSdk-resources.sh",
+				"${PODS_ROOT}/WeexSDK/WeexSDK.framework/native-bundle-main.js",
+				"${PODS_ROOT}/WeexSDK/WeexSDK.framework/wx_load_error@3x.png",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/native-bundle-main.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wx_load_error@3x.png",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeexCustomShareSdk/Pods-WeexCustomShareSdk-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
