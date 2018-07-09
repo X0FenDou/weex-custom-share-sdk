@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: "com.mob.sdk"
-
+apply plugin: 'com.novoda.bintray-release' // 新增
 
 android {
     compileSdkVersion 25
@@ -20,6 +20,22 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+
+    publish { // 新增
+        userOrg = 'fendou' // 注册bintray时的username
+        groupId = 'org.weex.plugin' // 项目包名
+        artifactId = 'weex-custom-share-sdk' // 项目名
+        publishVersion = '1.1.2' // 发布版本号
+        desc = 'weex plugin of shareSDK' // 项目描述，可选项
+        website = 'https://github.com/X0FenDou/weex-custom-share-sdk' // 项目站点，可选项
     }
 
     MobSDK {

@@ -1,6 +1,6 @@
 {
   "name": "weex-custom-share-sdk",
-  "version": "1.0.5",
+  "version": "1.1.2",
   "description": "weex plugin of shareSDK",
   "author": "wqc-1984@163.com",
   "WeexSDKVersoin": "0.16.0",
@@ -14,19 +14,15 @@
     "serve": "webpack-dev-server --env.NODE_ENV=development --progress",
     "prepublish": "npm run lint && npm run build"
   },
-  "web": {
-    "name": "weex-custom-share-sdk",
-    "version": "1.0.5"
-  },
   "android": {
     "groupId": "org.weex.plugin",
     "name": "weex-custom-share-sdk",
-    "dependency": "org.asialee.weex:weexplugin:1.0.5"
+    "version": "1.1.2"
   },
   "ios": {
     "type": "pod",
-    "name": "weex-custom-share-sdk",
-    "version": "1.0.5"
+    "name": "WeexCustomShareSdk",
+    "version": "1.1.2"
   },
   "keywords": [
     "weex",

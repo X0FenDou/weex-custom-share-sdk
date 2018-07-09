@@ -2,14 +2,14 @@
 
 Pod::Spec.new do |s|
   s.name         = "WeexCustomShareSdk"
-  s.version      = "0.0.1"
+  s.version      = "1.0.5"
   s.summary      = "Weex Plugin"
 
   s.description  = <<-DESC
                    Weexplugin Source Description
                    DESC
 
-  s.homepage     = "https://github.com"
+  s.homepage     = "https://github.com/X0FenDou/weex-custom-share-sdk.git"
   s.license = {
     :type => 'Copyright',
     :text => <<-LICENSE
@@ -17,14 +17,14 @@ Pod::Spec.new do |s|
     LICENSE
   }
   s.authors      = {
-                     "yourname" =>"youreamail"
+                     "yourname" =>"wqc-1984@163.com"
                    }
   s.platform     = :ios
   s.ios.deployment_target = "8.0"
 
-  s.source       = { :git => 'please input the url of your code in github', :tag => 'please input you github tag' }
+  s.source = { :git => "https://github.com/X0FenDou/weex-custom-share-sdk.git", :tag => s.version}
   s.source_files  = "ios/Sources/*.{h,m,mm}"
-  
+
   s.requires_arc = true
   s.dependency "WeexPluginLoader"
   s.dependency "WeexSDK"
